@@ -4,7 +4,6 @@ main .hero-container > div {
   
 main .hero-container {
   padding: 0;
-  background-color: var(--grey);
 }
 
 .hero {
@@ -42,6 +41,24 @@ main .hero-container {
 	color: var(--light-color);
 }
 
+.hero.story > div {
+	border: solid 2px cyan;
+	/* height: 80%;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-49%, -50%);
+    max-width: 1140px;
+    width: 100%; */
+}
+
+.hero.story > div > div:nth-of-type(2){
+	border: solid 2px fuchsia;
+	width: 60%;
+	padding: 20px;
+	background-color: var(--hero-float);
+}
+
 .hero.story h1 {
 	font-size: 2.4rem;
 	font-weight: 700;
@@ -62,4 +79,5 @@ main .hero-container {
 .hero.story p {
 	font-size: 1.25rem;
     line-height: 1.6;
+	margin: 0;
 }

@@ -1,6 +1,7 @@
 .columns > div {
   display: flex;
   flex-direction: column;
+  gap: 32px;
 }
 
 .columns img {
@@ -23,7 +24,7 @@
   .columns > div {
     align-items: center;
     flex-direction: unset;
-    gap: 32px;
+
   }
 
   .columns > div > div {
@@ -32,6 +33,90 @@
   }
 }
 
-.columns .quote {
-	
+
+/* quote variant styles */
+.section.columns-container.highlight {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.columns.quote > div > div {
+	width: 100%;
+}
+
+/* quote box || left side box */
+.columns.quote > div > div:first-of-type {
+	background-color: var(--light-color);
+    padding: 55px 70px;
+    margin-left: 60px;
+}
+
+.columns.quote > div > div:first-of-type > h3 {
+	font-weight: 700;
+    font-size: 20px;
+	margin: 0;
+}
+
+.columns.quote > div > div:first-of-type > h3:first-of-type {
+	margin-bottom: 40px;
+}
+
+.columns.quote > div > div:first-of-type > p {
+	font-size: 14px;
+	margin: 0;
+}
+
+/* right side */
+.columns.quote > div > div:last-of-type {
+    margin-right: 60px;
+    padding: 0 16px;
+}
+
+.columns.quote > div > div:last-of-type h3 {
+	color: var(--lenovo-red);
+	font-size: 30px;
+	font-weight: 700;
+	margin: 8px 0 16px;
+}
+
+.columns.quote > div > div:last-of-type p {
+	margin: 0;
+	font-size: 1rem;
+    line-height: 1.4rem;
+}
+
+.columns.quote > div > div:last-of-type p strong {
+	font-weight: 800;
+}
+
+@media (width < 900px) {
+	.section.columns-container.highlight {
+		padding-top: 92px;
+		padding-bottom: 92px;
+	}
+
+	.columns > div {
+		gap: 30px;
+	}
+
+	.columns.quote > div > div:first-of-type {
+		margin-left: 0;
+		padding: 20px 0;
+	}
+
+	.columns.quote > div > div:first-of-type > h3 {
+		margin: 0 24px;
+		font-size: 22px;
+	}
+
+	.columns.quote > div > div:first-of-type > p,
+	.columns.quote > div > div:first-of-type > h3:last-of-type {
+		text-align: right;
+		margin: 0 24px;
+	}
+
+
+	.columns.quote > div > div:last-of-type {
+		margin-right: 0;
+	}
 }
