@@ -12,12 +12,16 @@
 
 :root {
   /* colors */
-  --link-color: #035fe6;
-  --link-hover-color: #136ff6;
-  --background-color: white;
-  --light-color: #eee;
-  --dark-color: #ccc;
-  --text-color: black;
+  --link-color:#004680;
+  --link-hover-color: #009dd9;
+  --background-color: var(--light-color);
+  --light-color: #fff;
+  --grey: #ccc;
+  --dark-color: black;
+  --lenovo-red: #e1251b;
+  --teal: #00b9ff;
+
+  --hero-float: rgba(0, 0, 0, 0.8);
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback;

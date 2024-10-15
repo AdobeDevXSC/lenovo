@@ -4,6 +4,7 @@ main .hero-container > div {
   
 main .hero-container {
   padding: 0;
+  background-color: var(--grey);
 }
 
 .hero {
@@ -21,14 +22,44 @@ main .hero-container {
 
 .hero picture {
   position: absolute;
-  z-index: -1;
   inset: 0;
   object-fit: cover;
   box-sizing: border-box;
+  max-height: 425px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .hero img {
   object-fit: cover;
   width: 100%;
   height: 100%;
+  display: block;
+}
+
+.hero.story {
+	color: var(--light-color);
+}
+
+.hero.story h1 {
+	font-size: 2.4rem;
+	font-weight: 700;
+	line-height: 1.1;
+	margin: 15px 0;
+	word-break: break-word;
+	border: solid 2px orange;
+}
+
+.hero.story h4 {
+	border: solid 2px lime;
+	font-size: 1rem;
+	line-height: 1.4;
+	width: fit-content;
+	margin: 0 0 20px;
+}
+
+.hero.story p {
+	font-size: 1.25rem;
+    line-height: 1.6;
 }
