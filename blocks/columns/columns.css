@@ -44,6 +44,10 @@
 	width: 100%;
 }
 
+.columns.quote > div a {
+	text-decoration: none;
+}
+
 /* quote box || left side box */
 .columns.quote > div > div:first-of-type {
 	background-color: var(--light-color);
@@ -115,8 +119,8 @@
 		margin: 0 24px;
 	}
 
-
 	.columns.quote > div > div:last-of-type {
-		margin-right: 0;
+		margin: 0 20px;
+		padding: 0;
 	}
 }
