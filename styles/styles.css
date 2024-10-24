@@ -28,7 +28,7 @@
   --hero-float: rgba(0, 0, 0, 0.8);
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback;
+  --body-font-family: lato, roboto-fallback;
   --heading-font-family: var(--body-font-family);
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
