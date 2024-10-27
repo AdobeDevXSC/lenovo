@@ -33,6 +33,10 @@ export default function decorate(block) {
 		paragraph.remove();
 
 		hiddenDiv.innerHTML = `
+			<button class="close-btn">
+				<span></span>
+				<span></span>
+			</button>
 			<form>
 				<div class="form-row">
 					<input placeholder="First Name">
@@ -57,10 +61,9 @@ export default function decorate(block) {
 		const ctaButton = document.createElement('button');
 		ctaButton.innerText = 'Share success story';
 
-
 		const toggleForm = () => {
-			console.log('click')
 			hiddenDiv.classList.toggle('visible');
+			ctaButton.classList.toggle('hidden');
 		}
 		
 		ctaButton.addEventListener("click", toggleForm);		

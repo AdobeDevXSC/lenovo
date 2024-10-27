@@ -18,22 +18,18 @@ export default async function decorate(block) {
   const ul = document.createElement('ul');
 
 	[...block.children].forEach((row) => {
-		const anchor = document.createElement('a');
-		anchor.href = '';
 		const li = document.createElement('li');
 		while (row.firstElementChild) li.append(row.firstElementChild);
 		[...li.children].forEach((div) => {
-
-		if (div.children.length === 1 && div.querySelector('picture')) {
-			div.className = 'cards-card-image';
-		} else if (div.children.length === 1 && div.querySelector('span')) {
-			div.className = 'cards-card-icon';
-		} else {
-			div.className = 'cards-card-body';
-		}
+			if (div.children.length === 1 && div.querySelector('picture')) {
+				div.className = 'cards-card-image';
+			} else if (div.children.length === 1 && div.querySelector('span')) {
+				div.className = 'cards-card-icon';
+			} else {
+				div.className = 'cards-card-body';
+			}
 		});
-		anchor.append(li);
-		ul.append(anchor);
+		ul.append(li);
 	});
   
   if (isJSON) {
