@@ -293,7 +293,7 @@ export function decorateMain(main) {
   scheduleSections(main);
   scheduleBlocks(main);
   decorateBlocks(main);
-  decorateExternalLinks(main);
+  decorateExternalLinks(main)
 }
 
 /**
