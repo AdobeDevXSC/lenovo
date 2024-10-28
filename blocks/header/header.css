@@ -10,6 +10,12 @@ header .nav-wrapper {
 	transition: top 0.3s cubic-bezier(0.82, 0.14, 0.23, 0.885);
   }
   
+
+ header .section > div {
+    max-width: unset;
+    margin: 0;
+  }
+
   header nav#nav {
 	box-sizing: border-box;
 	display: grid;
@@ -19,7 +25,7 @@ header .nav-wrapper {
 	align-items: center;
 	gap: 0 2em;
 	margin: auto;
-	max-width: 1264px;
+	max-width: unset;
 	padding: 0 1rem;
 	font-family: var(--body-font-family);
   }
@@ -151,7 +157,6 @@ header .nav-wrapper {
 	font-size: var(--heading-font-size-s);
 	font-weight: 700;
 	line-height: 1;
-	border: solid 2px lime;
 	width: 100%;
 	margin-top: 38px;
 	padding: 16px 0 0;
@@ -159,7 +164,8 @@ header .nav-wrapper {
 
   header .nav-brand > div {
 	display: flex;
-	align-items: center; 
+	align-items: center;
+	justify-content: space-between;
 	width: 100%;
   }
   
@@ -168,10 +174,12 @@ header .nav-wrapper {
 	width: fit-content;
   }
 
+  /* svg logo styles */
   header nav#nav .nav-brand a > span.icon {
 	display: block;
 	width: unset;
 	height: unset;
+	margin-right: 32px;
   }
 
   header nav#nav .nav-brand a > span > img {
@@ -180,6 +188,119 @@ header .nav-wrapper {
 	display: block;
   }
   
+  header nav#nav .nav-brand a > span.icon {
+	display: block;
+	width: unset;
+	height: unset;
+  }
+
+  /* searchbar */
+  /* "input" */
+  header .nav-brand > div > p:nth-of-type(2) {
+    background-color: var(--background-color);
+    color: rgb(0, 0, 0, 0.6);
+	position: relative;
+    display: flex;
+	align-items: center;
+    justify-content: space-between;
+	font-size: 16px;
+    line-height: 24px;
+	font-weight: 400;
+	height: 48px;
+    border: 2px solid #171717;
+    border-radius: 12px;
+	overflow: hidden;
+	width: calc(100% - 64px);
+	max-width: 719px;
+	padding-left: 72px;
+  }
+
+  /* all button */
+  header .nav-brand > div > p:nth-of-type(2)::before {
+		position: absolute;
+		left: 38px;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 10;
+		content: "";
+		display: block;
+		background-image: url("../../icons/down.svg");
+		background-repeat: none;
+		background-size: cover;
+		background-color: #EDEDED;
+		width: 16px;
+		height: 10px;
+  }
+	  
+  header .nav-brand > div > p:nth-of-type(2)::after {
+	content: "All";
+	position: absolute;
+	color: rgb(0, 0, 0, 1);
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 100%;
+	padding-left: 12px;
+	width: 48px;
+	background-color: #EDEDED;
+	line-height: 48px;
+	font-size: 17px;
+  }
+  
+  /* magnifying glass icon */
+  header .nav-brand > div > p:nth-of-type(2) span.icon {
+	width: 40px;
+	height: 30px;
+  }
+
+  header .nav-brand > div > p:nth-of-type(2) span.icon img {
+	width: 20px;
+	height: auto;
+	display: block;
+	margin: 5px auto;
+  }
+
+  /* right section */
+  header .nav-brand > div > ul {
+	display: flex;
+	list-style: none;
+	padding: 0;
+	margin: 0 0 0 32px;
+  }
+
+  /* sign-in */
+  header nav#nav .nav-brand ul > li:first-of-type {
+    line-height: 24px;
+	font-size: 14px;
+	font-weight: 400;
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	padding-top: 8px;
+	margin-right: 16px;
+  }
+
+  header nav#nav .nav-brand ul > li:first-of-type > span {
+	display: block;
+	padding: 0 16px 0 0;
+  }
+
+  /* box */
+  header nav#nav .nav-brand ul > li:nth-of-type(2) > span {
+	display: block;
+	padding: 8px 16px 0;
+  }
+
+  /* cart */
+  header nav#nav .nav-brand ul > li:last-of-type > span {
+	display: block;
+	padding: 8px 0 0 16px;
+  }
+
+  header nav#nav .nav-brand ul > li > span > img {
+	width: 24px;
+	height: 24px;
+  }
 
 
   /* sections */
@@ -190,6 +311,7 @@ header .nav-wrapper {
 	visibility: hidden;
 	width: 100%;
 	margin: 16px 0 56px;
+	height: 39px;
   }
 
   header nav#nav .nav-sections > div {
@@ -212,7 +334,10 @@ header .nav-wrapper {
 
   /* left section */
   header nav#nav .nav-sections ul:first-of-type > li {
-
+	font-weight: 700;
+    font-size: 16px;
+	position: relative;
+	line-height: 19px;
   }
 
   /* right section */
@@ -229,7 +354,7 @@ header .nav-wrapper {
   header nav#nav .nav-sections ul:last-of-type > li {
 	font-weight: 700;
     font-size: 16px;
-	padding: 0 20px;
+	padding: 0 14px;
 	position: relative;
 	line-height: 19px;
     color: #171717;
