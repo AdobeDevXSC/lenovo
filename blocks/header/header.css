@@ -39,6 +39,7 @@ header .nav-wrapper {
   @media (width >= 900px) {
 	header nav#nav {
 	  display: flex;
+	  flex-direction: column;
 	  justify-content: space-between;
 	}
   
@@ -146,6 +147,8 @@ header .nav-wrapper {
 	font-size: var(--heading-font-size-s);
 	font-weight: 700;
 	line-height: 1;
+	border: solid 2px lime;
+	width: 100%;
   }
   
   header nav#nav .nav-brand img {
@@ -159,6 +162,8 @@ header .nav-wrapper {
 	flex: 1 1 auto;
 	display: none;
 	visibility: hidden;
+	border: solid 2px orange;
+	width: 100%;
   }
   
   header nav#nav[aria-expanded="true"] .nav-sections {
@@ -276,7 +281,8 @@ header .nav-wrapper {
   
   /* tools */
   header nav#nav .nav-tools {
-	grid-area: tools;
+	border: solid 2px fuchsia;
+	width: 100%;
   }
   
   header nav#nav .nav-tools .button {
