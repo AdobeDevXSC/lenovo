@@ -43,7 +43,7 @@ main .section.hero-container.lilac {
 }
 
 .hero > div:first-of-type video {
-	object-fit: contain;
+	object-fit: cover;
 	max-height: 530px;
 	width: 100%;
     overflow: hidden;
@@ -56,7 +56,7 @@ main .section.hero-container.lilac {
 
 @media (width <= 1280px){
 	main .hero-container {
-		padding: 90px 148px ;
+		padding: 90px 124px ;
 	}
 
 	.hero {
@@ -77,6 +77,10 @@ main .section.hero-container.lilac {
 
 	.hero > div:first-of-type {
 		width: calc(100% - 40px);
+	}
+
+	.hero > div:first-of-type video {
+		max-height: 500px;
 	}
 
 	.hero > div:last-of-type {
