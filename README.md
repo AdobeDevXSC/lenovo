@@ -2,8 +2,8 @@
 
 
 ## Environments
-- Preview: Preview: https://main--dev-xsc-boilerplate--adobedevxsc.hlx.page/
-- Live: https://main--dev-xsc-boilerplate--adobedevxsc.hlx.live/
+- Preview: Preview: https://main--lenovo--adobedevxsc.hlx.page/
+- Live: https://main--lenovo--adobedevxsc.hlx.live/
 
 ## Installation
 
