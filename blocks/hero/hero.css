@@ -130,6 +130,7 @@ main .hero-container {
 		left: 50%;
 		transform: translateX(-50%);
 		max-height: 500px;
+		width: 80%;
 	}
 
 	.hero.story > div {

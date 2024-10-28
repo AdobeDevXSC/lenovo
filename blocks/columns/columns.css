@@ -104,9 +104,9 @@
 }
 
 
-@media (width <= 686px) {
-	.columns.quote > div > div:last-of-type h3 {
-		font-size: 22px;
+@media (width <= 1280px) {
+	.columns.quote > div > div:first-of-type {
+		padding: 36px;
 	}
 }
 
@@ -143,5 +143,11 @@
 	.columns.quote > div > div:last-of-type {
 		margin: 0 20px;
 		padding: 0;
+	}
+}
+
+@media (width <= 686px) {
+	.columns.quote > div > div:last-of-type h3 {
+		font-size: 22px;
 	}
 }
