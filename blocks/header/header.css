@@ -4,6 +4,9 @@ header .nav-wrapper {
 	width: 100%;
 	z-index: 2;
 	position: fixed;
+	padding-top: 38px;
+	padding-bottom: 56px;
+	border: solid 2px purple;
   }
   
   header nav#nav {
@@ -150,10 +153,29 @@ header .nav-wrapper {
 	border: solid 2px lime;
 	width: 100%;
   }
+
+  header .nav-brand > div {
+	display: flex;
+	align-items: center; 
+	width: 100%;
+  }
   
-  header nav#nav .nav-brand img {
+  header nav#nav .nav-brand a {
+	display: block;
+	width: fit-content;
+	border: solid cyan 2px;
+  }
+
+  header nav#nav .nav-brand a > span.icon {
+	display: block;
+	width: unset;
+	height: unset;
+  }
+
+  header nav#nav .nav-brand a > span > img {
 	width: 128px;
 	height: auto;
+	display: block;
   }
   
   /* sections */
@@ -164,6 +186,11 @@ header .nav-wrapper {
 	visibility: hidden;
 	border: solid 2px orange;
 	width: 100%;
+  }
+
+  header nav#nav .nav-sections > div {
+	display: flex;
+	justify-content: space-between;
   }
   
   header nav#nav[aria-expanded="true"] .nav-sections {
@@ -281,62 +308,88 @@ header .nav-wrapper {
   
   /* tools */
   header nav#nav .nav-tools {
-	border: solid 2px fuchsia;
 	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #ededed;
+  }
+
+  header nav#nav .nav-tools > div {
+    min-height: 38px;
+	max-height: 38px;
   }
   
-  header nav#nav .nav-tools .button {
+  /* header nav#nav .nav-tools .button {
 	background: none;
 	border: none;
 	padding: 10px;
 	margin: 0;
+  } */
+
+  header nav#nav .nav-tools ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+  }
+
+  header nav#nav .nav-tools ul > li {
+	border: solid 2px orange;
+	margin: 0 12px;
+	font-size: 14px;
+  }
+
+  header nav#nav .nav-tools ul > li > a {
+	text-decoration: none;
+	display: block;
+  }
+
+  header nav#nav .nav-tools ul > li > span.icon > img {
+	display: block;
+  }
+
+  /* accessibility span */
+  header nav#nav .nav-tools ul > li > span.icon {
+	display: block;
+	width: 16px;
+	height: 16px;
+  }
+
+  header nav#nav .nav-tools ul > li:last-of-type > span.icon {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 8px;
   }
   
   /* breadcrumbs */
-  header .breadcrumbs {
-	display: none;
-	padding: 0 32px;
+  header nav#nav .section:not(.nav-tools):not(.nav-sections):not(.nav-brand) {
 	width: 100%;
-	height: var(--breadcrumbs-height);
-	max-width: 1200px;
-	overflow: hidden;
-	margin: 0 auto;
-	font-size: var(--breadcrumbs-font-size);
+	background-color: #ededed;
+	position: absolute;
+	bottom: 0;
+	left: 0;
   }
-  
-  header .breadcrumbs ol {
-	display: flex;
-	flex-flow: wrap;
+
+  header nav#nav .section:not(.nav-tools):not(.nav-sections):not(.nav-brand) ul {
 	list-style: none;
 	padding: 0;
-	margin-top: 0;
-	margin-bottom: 0;
-	gap: 1ch;
+	margin: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: fit-content;
+	border: solid 2px lime;
   }
-  
-  /* stylelint-disable-next-line no-descending-specificity */
-  header .breadcrumbs ol li {
-	padding-inline-start: 0;
-	opacity: 0.7;
-  }
-  
-  header .breadcrumbs ol li:not(:last-child)::after {
-	content: "/";
-	padding-left: 1ch;
-  }
-  
-  /* stylelint-disable-next-line no-descending-specificity */
-  header .breadcrumbs ol li a:any-link {
-	color: var(--text-color);
-  }
-  
-  /* stylelint-disable-next-line no-descending-specificity */
-  header .breadcrumbs ol li:last-of-type {
-	opacity: 1;
-  }
-  
-  @media screen and (width >= 900px) {
-	header .breadcrumbs {
-	  display: block;
-	}
+
+  header nav#nav .section:not(.nav-tools):not(.nav-sections):not(.nav-brand) ul > li {
+	font-weight: 500;
+	height: 38px;
+    margin-top: 18px;
+    display: inline-block;
+    padding: 0 12px;
+	font-size: 14px;
   }
