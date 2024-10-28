@@ -22,7 +22,7 @@ main .section.hero-container.lilac {
 	justify-content: space-between;
 }
 
-.hero h1 {
+.hero:not(.story) h1 {
     font-size: 3rem;
     font-weight: 700;
     line-height: 1.1;
@@ -31,7 +31,7 @@ main .section.hero-container.lilac {
 	gap: 24px;
 }
 
-.hero p {
+.hero:not(.story) p {
 	font-size: 1.1rem;
 	line-height: 1.5;
 	margin: 0 0 32px 0;

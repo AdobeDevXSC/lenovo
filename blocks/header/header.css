@@ -3,10 +3,11 @@ header .nav-wrapper {
 	background-color: var(--background-color);
 	width: 100%;
 	z-index: 2;
+	top: 0;
+	left: 0;
 	position: fixed;
-	padding-top: 38px;
-	padding-bottom: 56px;
-	border: solid 2px purple;
+	min-height: var(--nav-height);
+	transition: top 0.3s cubic-bezier(0.82, 0.14, 0.23, 0.885);
   }
   
   header nav#nav {
@@ -19,7 +20,6 @@ header .nav-wrapper {
 	gap: 0 2em;
 	margin: auto;
 	max-width: 1264px;
-	height: var(--nav-height);
 	padding: 0 1rem;
 	font-family: var(--body-font-family);
   }
@@ -143,15 +143,18 @@ header .nav-wrapper {
 	}
   }
   
+
+
   /* brand */
   header .nav-brand {
 	grid-area: brand;
-	flex-basis: 128px;
 	font-size: var(--heading-font-size-s);
 	font-weight: 700;
 	line-height: 1;
 	border: solid 2px lime;
 	width: 100%;
+	margin-top: 38px;
+	padding: 16px 0 0;
   }
 
   header .nav-brand > div {
@@ -163,7 +166,6 @@ header .nav-wrapper {
   header nav#nav .nav-brand a {
 	display: block;
 	width: fit-content;
-	border: solid cyan 2px;
   }
 
   header nav#nav .nav-brand a > span.icon {
@@ -178,14 +180,16 @@ header .nav-wrapper {
 	display: block;
   }
   
+
+
   /* sections */
   header nav#nav .nav-sections {
 	grid-area: sections;
 	flex: 1 1 auto;
 	display: none;
 	visibility: hidden;
-	border: solid 2px orange;
 	width: 100%;
+	margin: 16px 0 56px;
   }
 
   header nav#nav .nav-sections > div {
@@ -205,11 +209,37 @@ header .nav-wrapper {
 	font-size: var(--body-font-size-s);
 	font-weight: 500;
   }
-  
-  header nav#nav .nav-sections ul > li {
-	font-weight: 700;
+
+  /* left section */
+  header nav#nav .nav-sections ul:first-of-type > li {
+
+  }
+
+  /* right section */
+  header nav#nav .nav-sections ul:last-of-type li:not(:last-of-type)::after {
+	content: "";
+	position: absolute;
+	right: -16px;
+	top: 50%;
+	transform: translateY(-50%);
+	border-right: 2px solid #dbdbdb;
+	height: 19px;
   }
   
+  header nav#nav .nav-sections ul:last-of-type > li {
+	font-weight: 700;
+    font-size: 16px;
+	padding: 0 20px;
+	position: relative;
+	line-height: 19px;
+    color: #171717;
+  }
+
+  header nav#nav .nav-sections ul:last-of-type > li:last-of-type {
+	padding-right: 0;
+  }
+  
+  /* default nested menus */
   header nav#nav .nav-sections ul > li > ul {
 	margin-top: 0;
   }
@@ -308,24 +338,21 @@ header .nav-wrapper {
   
   /* tools */
   header nav#nav .nav-tools {
-	width: 100%;
+	width: calc(100% - 2rem);
 	position: absolute;
 	top: 0;
 	left: 0;
 	background-color: #ededed;
+	padding: 0 1rem;
   }
 
   header nav#nav .nav-tools > div {
     min-height: 38px;
 	max-height: 38px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
   }
-  
-  /* header nav#nav .nav-tools .button {
-	background: none;
-	border: none;
-	padding: 10px;
-	margin: 0;
-  } */
 
   header nav#nav .nav-tools ul {
 	list-style: none;
@@ -338,8 +365,7 @@ header .nav-wrapper {
   }
 
   header nav#nav .nav-tools ul > li {
-	border: solid 2px orange;
-	margin: 0 12px;
+	margin: 0 0 0 24px;
 	font-size: 14px;
   }
 
@@ -352,19 +378,29 @@ header .nav-wrapper {
 	display: block;
   }
 
-  /* accessibility span */
+  /* accessibility icon */
   header nav#nav .nav-tools ul > li > span.icon {
 	display: block;
 	width: 16px;
 	height: 16px;
   }
 
+  /* headset icon */
   header nav#nav .nav-tools ul > li:last-of-type > span.icon {
 	display: inline-block;
 	vertical-align: middle;
 	margin-right: 8px;
   }
+
+  @media (width >= 600px) {
+	header nav#nav .nav-tools {
+	  width: calc(100% - 4rem);
+	  padding: 0 2rem;
+	}
+  }
   
+
+
   /* breadcrumbs */
   header nav#nav .section:not(.nav-tools):not(.nav-sections):not(.nav-brand) {
 	width: 100%;
@@ -372,6 +408,18 @@ header .nav-wrapper {
 	position: absolute;
 	bottom: 0;
 	left: 0;
+	padding: 0 1rem;
+	overflow: hidden;
+  }
+
+  @media (width >= 600px) {
+	header nav#nav .section:not(.nav-tools):not(.nav-sections):not(.nav-brand) {
+	  padding: 0 2rem;
+	}
+  }
+
+  header nav#nav .section:not(.nav-tools):not(.nav-sections):not(.nav-brand) > div {
+	overflow-x: scroll;
   }
 
   header nav#nav .section:not(.nav-tools):not(.nav-sections):not(.nav-brand) ul {
@@ -382,7 +430,7 @@ header .nav-wrapper {
 	justify-content: space-between;
 	align-items: center;
 	width: fit-content;
-	border: solid 2px lime;
+	overflow-x: scroll;
   }
 
   header nav#nav .section:not(.nav-tools):not(.nav-sections):not(.nav-brand) ul > li {
@@ -392,4 +440,9 @@ header .nav-wrapper {
     display: inline-block;
     padding: 0 12px;
 	font-size: 14px;
+	white-space: pre;
+  }
+
+  header nav#nav .section:not(.nav-tools):not(.nav-sections):not(.nav-brand) ul > li:first-of-type {
+	margin-left: -12px;
   }

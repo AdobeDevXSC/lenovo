@@ -36,6 +36,18 @@ function focusNavSection() {
   document.activeElement.addEventListener('keydown', openOnKeydown);
 }
 
+// JS for Navbar hide/show on scroll
+var prevScrollpos = window.scrollY;
+window.onscroll = function () {
+	var currentScrollPos = Math.max(window.scrollY, 0);
+	if (currentScrollPos - prevScrollpos <= 0 ) {
+		document.querySelector(".nav-wrapper").style.top = "0";
+	} else {
+		document.querySelector(".nav-wrapper").style.top = "-218px";
+	}
+	prevScrollpos = currentScrollPos;
+};
+
 /**
  * Toggles all nav sections
  * @param {Element} sections The container element
