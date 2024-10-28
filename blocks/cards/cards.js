@@ -2,7 +2,9 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 
 export default async function decorate(block) {
   const isJSON = block.classList.contains('is-json');
+  const isStoryLinks = block.classList.contains('story-links');
   const link = block.querySelector('a'); 
+
 
   async function fetchJson(link) {
     const response = await fetch(link?.href);
@@ -49,6 +51,20 @@ export default async function decorate(block) {
       ul.append(createdCard);
     });
   }
+
+  const links = block.querySelectorAll('a');
+  if(isStoryLinks){
+	links.forEach((link) => {
+
+		console.log(link)
+		
+
+
+
+		
+	})
+  }
+
 
   block.textContent = '';
   block.append(ul);

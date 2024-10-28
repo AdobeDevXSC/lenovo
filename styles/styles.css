@@ -145,7 +145,7 @@ a.button:any-link, button {
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   text-align: center;
   font-style: normal;
   cursor: pointer;
