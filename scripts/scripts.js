@@ -150,6 +150,27 @@ export function makeVideo(element, href) {
 	});
   }
 
+
+  /**
+ * Handles external links and PDFs to be opened in a new tab/window
+ * @param {Element} main The main element
+ */
+export function decorateExternalLinks(main) {
+	main.querySelectorAll('a').forEach((a) => {
+	  const href = a.getAttribute('href');
+	  if (href) {
+		const extension = href.split('.').pop().trim();
+		if (!href.startsWith('/')
+		  && !href.startsWith('#')) {
+		  if (href.includes('lenovo.com/content') || (extension === 'pdf')) {
+			a.setAttribute('target', '_blank');
+		  }
+		}
+	  }
+	});
+  }
+
+
   /**
  * Convience method for creating tags in one line of code
  * @param {string} tag Tag to create
@@ -272,6 +293,7 @@ export function decorateMain(main) {
   scheduleSections(main);
   scheduleBlocks(main);
   decorateBlocks(main);
+  decorateExternalLinks(main);
 }
 
 /**

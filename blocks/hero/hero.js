@@ -13,12 +13,5 @@ export default async function decorate(block) {
 
     makeVideo(block.querySelector('div'), videoSrc.href);
     videoSrc.remove();
-
-	if(block.classList.contains('story')){
-		const backBtn = document.createElement('a');
-		backBtn.innerText = '< Back to all customer stories';
-		backBtn.href = "https://main--lenovo--adobedevxsc.aem.live/"
-		block.append(backBtn);
-	}
   }
 }
