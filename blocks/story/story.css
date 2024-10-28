@@ -3,19 +3,19 @@
 	padding-right: 32px;
 }
 
-.story h3 {
+.block:not(.hero).story h3 {
     letter-spacing: -0.025em;
 	text-align: center;
 	padding: 0 36px;
 	margin: 0 0 32px;
 }
 
-.story p {
+.block:not(.hero).story p {
 	font-size: 16px;
 	line-height: 1.4em;
 }
 
-.story p.button-container > a {
+.block:not(.hero).story p.button-container > a {
 	background: transparent;
 	border: solid 1px var(--lenovo-red);
 	color: var(--lenovo-red);
@@ -24,7 +24,7 @@
 }
 
 @media(width <= 686px){
-	.story h3 {
+	.block:not(.hero).story h3 {
 		padding: 0 12px;
 	}
 }

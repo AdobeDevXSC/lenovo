@@ -34,6 +34,8 @@
 }
 
 
+
+
 /* quote variant styles */
 .section.columns-container.highlight {
 	padding-top: 50px;
@@ -57,12 +59,16 @@
 
 .columns.quote > div > div:first-of-type > h3 {
 	font-weight: 700;
-    font-size: 20px;
+    font-size: 23px;
+	line-height: 1.4em;
 	margin: 0;
+	margin-bottom: 40px;
 }
 
-.columns.quote > div > div:first-of-type > h3:first-of-type {
-	margin-bottom: 40px;
+.columns.quote > div > div:first-of-type > h4 {
+	font-size: 18px;
+    font-weight: 700;
+    margin: 32px 0 0 0;
 }
 
 .columns.quote > div > div:first-of-type > p {
@@ -93,7 +99,18 @@
 	font-weight: 800;
 }
 
-@media (width < 900px) {
+.columns.quote > div > div:last-of-type p > a {
+	text-decoration: underline;
+}
+
+
+@media (width <= 686px) {
+	.columns.quote > div > div:last-of-type h3 {
+		font-size: 22px;
+	}
+}
+
+@media (width <= 900px) {
 	.section.columns-container.highlight {
 		padding-top: 92px;
 		padding-bottom: 92px;
@@ -110,13 +127,17 @@
 
 	.columns.quote > div > div:first-of-type > h3 {
 		margin: 0 24px;
-		font-size: 22px;
+		font-size: 23px;
 	}
 
-	.columns.quote > div > div:first-of-type > p,
-	.columns.quote > div > div:first-of-type > h3:last-of-type {
+	.columns.quote > div > div:first-of-type > p {
 		text-align: right;
 		margin: 0 24px;
+	}
+
+	.columns.quote > div > div:first-of-type > h4 {
+		text-align: right;
+		margin: 32px 24px 0;
 	}
 
 	.columns.quote > div > div:last-of-type {
