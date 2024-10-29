@@ -20,10 +20,10 @@ header .nav-wrapper {
 	box-sizing: border-box;
 	display: grid;
 	grid-template:
-	  "hamburger brand tools" var(--nav-height)
+	  "hamburger brand tools" 200px
 	  "sections sections sections" 1fr / auto 1fr auto;
 	align-items: center;
-	gap: 0 2em;
+	/* gap: 0 2em; */
 	margin: auto;
 	max-width: unset;
 	padding: 0 1rem;
@@ -169,12 +169,12 @@ header .nav-wrapper {
 	width: 100%;
   }
   
+  /* svg logo styles */
   header nav#nav .nav-brand a {
 	display: block;
 	width: fit-content;
   }
 
-  /* svg logo styles */
   header nav#nav .nav-brand a > span.icon {
 	display: block;
 	width: unset;
@@ -301,6 +301,37 @@ header .nav-wrapper {
 	width: 24px;
 	height: 24px;
   }
+
+  @media (width <= 600px) {
+	header .nav-brand {
+		padding-top: 0;
+		margin-top: 0;
+		margin-left: -20px;
+	}
+
+	header .nav-brand > div {
+		position: relative;
+	}
+
+	header nav#nav .nav-brand a {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	header nav#nav .nav-brand a > span.icon {
+		margin: 0;
+	}
+
+  	header .nav-brand > div > p:nth-of-type(2),
+	header nav#nav .nav-brand ul > li:first-of-type,
+	header nav#nav .nav-brand ul > li:nth-of-type(2) > span,
+	header nav#nav .nav-brand ul > li:last-of-type > span {
+		display: none;
+	}
+  }
+
 
 
   /* sections */
@@ -460,6 +491,7 @@ header .nav-wrapper {
 	  padding: 8px 0;
 	}
   }
+
   
   /* tools */
   header nav#nav .nav-tools {
@@ -537,12 +569,6 @@ header .nav-wrapper {
 	overflow: hidden;
   }
 
-  @media (width >= 600px) {
-	header nav#nav .section:not(.nav-tools):not(.nav-sections):not(.nav-brand) {
-	  padding: 0 2rem;
-	}
-  }
-
   header nav#nav .section:not(.nav-tools):not(.nav-sections):not(.nav-brand) > div {
 	overflow-x: scroll;
   }
@@ -566,8 +592,15 @@ header .nav-wrapper {
     padding: 0 12px;
 	font-size: 14px;
 	white-space: pre;
+	color: #4e444e;
   }
 
   header nav#nav .section:not(.nav-tools):not(.nav-sections):not(.nav-brand) ul > li:first-of-type {
 	margin-left: -12px;
+  }
+
+  @media (width >= 600px) {
+	header nav#nav .section:not(.nav-tools):not(.nav-sections):not(.nav-brand) {
+	  padding: 0 2rem;
+	}
   }
