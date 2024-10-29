@@ -141,7 +141,6 @@ export default async function decorate(block) {
   if(isJSONCarousel){  
 	const link = block.querySelector('a');
   	const logos = await fetchJson(link);
-	console.log("logos", logos)
 
 	logos.forEach((logo, idx) => {
 		const picture = createOptimizedPicture(logo.link, logo.title, false, [{ width: 320 }]);

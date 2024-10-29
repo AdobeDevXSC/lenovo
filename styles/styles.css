@@ -71,7 +71,7 @@ body {
   margin: 0;
   font-family: var(--body-font-family);
   line-height: 1.6;
-  color: var(--text-color);
+  color: var(--dark-color);
   background-color: var(--background-color);
   display: none;
 }
@@ -175,7 +175,7 @@ button:disabled, button:disabled:hover {
 a.button.secondary, button.secondary {
   background-color: unset;
   border: 2px solid currentcolor;
-  color: var(--text-color)
+  color: var(--dark-color)
 }
 
 main img {

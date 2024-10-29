@@ -48,7 +48,6 @@
 	}
 }
 
-
 @media (width >= 1280px){
 	.cards > ul {
 		display: flex;
@@ -77,4 +76,29 @@
 		width: 50%;
 		line-height: 1;
 	}
+}
+
+
+/* story card grid */
+.section.cards-container.story-links > .default-content-wrapper h2 {
+	font-weight: 700;
+    font-size: 2.25rem;
+    margin: 0 0 36px 0;
+}
+
+.section.cards-container.story-links > .default-content-wrapper p {
+	font-size: 19.416px;
+	font-weight: 500;
+	margin: 0.25em 0 0.5em;
+    line-height: 1.4em;
+}
+
+.section.cards-container.story-links .cards ul {
+	border: solid 2px lime;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.section.cards-container.story-links .cards ul > li { 
+	width: 100%;
 }
