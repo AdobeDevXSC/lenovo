@@ -154,7 +154,7 @@ export default async function decorate(block) {
 		createdSlide.classList.add('carousel-slide');
 
 		createdSlide.innerHTML = `
-			<div class="cards-card-image">
+			<div class="carousel-slide-image">
 			${picture.outerHTML}
 			</div>
 		`;
