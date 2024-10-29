@@ -150,7 +150,6 @@ header .nav-wrapper {
   }
   
 
-
   /* brand */
   header .nav-brand {
 	grid-area: brand;
@@ -263,6 +262,7 @@ header .nav-wrapper {
   /* right section */
   header .nav-brand > div > ul {
 	display: flex;
+	align-items: center;
 	list-style: none;
 	padding: 0;
 	margin: 0 0 0 32px;
@@ -270,7 +270,7 @@ header .nav-wrapper {
 
   /* sign-in */
   header nav#nav .nav-brand ul > li:first-of-type {
-    line-height: 24px;
+	line-height: 1.2em;
 	font-size: 14px;
 	font-weight: 400;
 	display: flex;
@@ -302,7 +302,7 @@ header .nav-wrapper {
 	height: 24px;
   }
 
-  @media (width <= 600px) {
+  @media (width <= 900px) {
 	header .nav-brand {
 		padding-top: 0;
 		margin-top: 0;
@@ -602,5 +602,9 @@ header .nav-wrapper {
   @media (width >= 600px) {
 	header nav#nav .section:not(.nav-tools):not(.nav-sections):not(.nav-brand) {
 	  padding: 0 2rem;
+	}
+
+	header nav#nav .section:not(.nav-tools):not(.nav-sections):not(.nav-brand) ul {
+		padding-right: 48px; 
 	}
   }

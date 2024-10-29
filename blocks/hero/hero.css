@@ -2,8 +2,13 @@ main .hero-container > div {
   max-width: unset;
 }
   
-main .hero-container {
+main .hero-container.landing {
   padding: 90px 0;
+}
+
+main .hero-container:not(.landing) {
+	padding-left: 0;
+	padding-right: 0;
 }
 
 /* lilac background */
@@ -11,9 +16,7 @@ main .section.hero-container.lilac {
 	background-color: var(--lilac);
 }
 
-
-
-.hero {
+.hero:not(.story) {
 	max-width: 1200px;
 	margin: 0 auto;
 	display: flex;
@@ -38,7 +41,7 @@ main .section.hero-container.lilac {
 	color: rgb(21, 21, 21);
 }
 
-.hero > div:first-of-type {
+.hero:not(.story) > div:first-of-type {
 	width: 40%;
 }
 
@@ -50,47 +53,46 @@ main .section.hero-container.lilac {
 	display: block;
 } 
 
-.hero > div:last-of-type {
+.hero:not(.story) > div:last-of-type {
 	width: calc(60% - 24px);
 }
 
 @media (width <= 1280px){
-	main .hero-container {
+	main .hero-container.landing {
 		padding: 90px 124px ;
 	}
 
-	.hero {
+	.hero:not(.story) {
 		flex-direction: column-reverse;
 	}
 
-	.hero h1 {
+	.hero:not(.story) h1 {
 		font-size: 2.5rem;
 		margin-bottom: 30px;
 	}
 
-	.hero p {
+	.hero:not(.story) p {
 		font-size: 1.25rem;
 		line-height: 1.5;
 		margin-top: 0;
 		margin-bottom: 0;
 	}
 
-	.hero > div:first-of-type {
+	.hero:not(.story) > div:first-of-type {
 		width: calc(100% - 40px);
 	}
 
-	.hero > div:first-of-type video {
+	.hero:not(.story) > div:first-of-type video {
 		max-height: 500px;
 	}
 
-	.hero > div:last-of-type {
+	.hero:not(.story) > div:last-of-type {
 		width: calc(100% - 40px);
 	}
 }
 
-
 @media (width <= 900px){
-	main .hero-container {
+	main .hero-container.landing {
 		padding: 72px 0 24px;
 	}
 }
@@ -240,8 +242,8 @@ main .section.hero-container.lilac {
 		left: 0;
 		transform: translateX(0);
 		max-height: 280px;
-		width: calc(100% - 40px);
-		margin: 0 20px;
+		width: calc(100% - 32px);
+		margin: 0 16px;
 	}
 
 	.hero.story > div > div:nth-of-type(2){
