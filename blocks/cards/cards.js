@@ -67,11 +67,13 @@ export default async function decorate(block) {
 	const storyLi = document.createElement('li');
 	storyLi.innerHTML = `
 		${heroPicture.outerHTML}
-		${tagWrapper.outerHTML}
-		<h4>${storyTitle.innerHTML}</h4>
-		<div class="buttons-container">
-			<a class="video-btn" href=${videoLink.href} target="_blank">Watch Video</a>
-			<a class="" href=${url}>Read Story</a>
+		<div class="story-card content-wrapper">
+			${tagWrapper.outerHTML}
+			<h4>${storyTitle.innerHTML}</h4>
+			<div class="buttons-container">
+				<a class="video-btn button" href=${videoLink.href} target="_blank">Watch Video</a>
+				<a class="read-story button" href=${url}>Read Story</a>
+			</div>
 		</div>
 	`
 	ul.append(storyLi);
